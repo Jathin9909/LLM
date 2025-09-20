@@ -61,9 +61,21 @@ export const ExportResults = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleDownload = (exportItem: typeof exportFormats[0]) => {
-    // Simulate download
-    console.log(`Downloading ${exportItem.name} as ${exportItem.format}`);
-    // In a real app, this would trigger the actual download
+    // Create a blob with sample data
+    const data = `Sample ${exportItem.name} data for OceanOMICS analysis`;
+    const blob = new Blob([data], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    
+    // Create download link
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `oceanomics_${exportItem.name.toLowerCase().replace(/\s+/g, '_')}.${exportItem.format.toLowerCase().split('/')[0]}`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    console.log(`Downloaded ${exportItem.name} as ${exportItem.format}`);
   };
 
   return (
