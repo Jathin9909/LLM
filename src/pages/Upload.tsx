@@ -55,10 +55,10 @@ const Upload = () => {
         continue;
       }
 
-      if (file.size > 100 * 1024 * 1024) { // 100MB limit
+      if (file.size > 5 * 1024 * 1024 * 1024) { // 5GB limit
         toast({
           title: "File too large",
-          description: `${file.name} exceeds 100MB limit.`,
+          description: `${file.name} exceeds 5GB limit.`,
           variant: "destructive"
         });
         continue;
@@ -201,7 +201,7 @@ const Upload = () => {
                 Drop files here or click to upload
               </h3>
               <p className="text-muted-foreground mb-6">
-                Supports FASTA (.fasta, .fa, .fas) and FASTQ (.fastq, .fq) files up to 100MB
+                Supports FASTA (.fasta, .fa, .fas) and FASTQ (.fastq, .fq) files up to 5GB
               </p>
               <input
                 type="file"
