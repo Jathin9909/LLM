@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { PipelineWorkflow } from "@/components/PipelineWorkflow";
+import { SequenceViewer } from "@/components/SequenceViewer";
 import { BiodiversityCharts } from "@/components/BiodiversityCharts";
 import { NovelTaxaDiscovery } from "@/components/NovelTaxaDiscovery";
 import { QualityMetrics } from "@/components/QualityMetrics";
@@ -172,11 +172,56 @@ const Demo = () => {
               <BiodiversityCharts />
               <NovelTaxaDiscovery />
             </div>
-            <SDGImpact />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <SDGImpact />
+              <Card className="bg-gradient-card shadow-elevation">
+                <CardHeader>
+                  <CardTitle>Sequence Data</CardTitle>
+                  <CardDescription>View classified sequences and their taxonomic assignments</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <SequenceViewer />
+                </CardContent>
+              </Card>
+            </div>
           </TabsContent>
 
           <TabsContent value="pipeline">
-            <PipelineWorkflow />
+            <div className="space-y-6">
+              <Card className="bg-gradient-card shadow-elevation">
+                <CardHeader>
+                  <CardTitle>Analysis Complete</CardTitle>
+                  <CardDescription>
+                    The eDNA biodiversity analysis pipeline has successfully processed your dataset
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div className="text-center p-4 bg-success/10 rounded-lg border border-success/20">
+                      <div className="text-2xl font-bold text-success">✓</div>
+                      <div className="text-sm font-medium">Data Processing</div>
+                      <div className="text-xs text-muted-foreground">QIIME2 + DADA2</div>
+                    </div>
+                    <div className="text-center p-4 bg-success/10 rounded-lg border border-success/20">
+                      <div className="text-2xl font-bold text-success">✓</div>
+                      <div className="text-sm font-medium">Classification</div>
+                      <div className="text-xs text-muted-foreground">Kraken2</div>
+                    </div>
+                    <div className="text-center p-4 bg-success/10 rounded-lg border border-success/20">
+                      <div className="text-2xl font-bold text-success">✓</div>
+                      <div className="text-sm font-medium">Novel Discovery</div>
+                      <div className="text-xs text-muted-foreground">VAE + HDBSCAN</div>
+                    </div>
+                    <div className="text-center p-4 bg-success/10 rounded-lg border border-success/20">
+                      <div className="text-2xl font-bold text-success">✓</div>
+                      <div className="text-sm font-medium">Quality Control</div>
+                      <div className="text-xs text-muted-foreground">Validated</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <SequenceViewer />
+            </div>
           </TabsContent>
 
           <TabsContent value="biodiversity">

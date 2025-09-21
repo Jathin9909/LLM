@@ -124,62 +124,79 @@ export function AppSidebar() {
             </h3>
             <div className="space-y-3">
               {taxonomyItems.map((item, index) => (
-                <div
+                <button
                   key={index}
-                  className="flex items-center justify-between p-3 bg-muted/50 rounded-lg border"
+                  onClick={() => {
+                    alert(`Viewing ${item.title}: ${item.count} classified species including marine bacteria, phytoplankton, and zooplankton with detailed taxonomic hierarchy.`);
+                  }}
+                  className="w-full flex items-center justify-between p-3 bg-muted/50 rounded-lg border hover:bg-muted/70 transition-colors cursor-pointer"
                 >
                   <div className="flex items-center space-x-3">
                     <div className="bg-primary/10 p-2 rounded">
                       <item.icon className="h-3 w-3 text-primary" />
                     </div>
-                    <div>
+                    <div className="text-left">
                       <p className="text-sm font-medium text-foreground">{item.title}</p>
                       <p className="text-xs text-muted-foreground">{item.count}</p>
                     </div>
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           </div>
 
-          {/* Featured Taxonomic Groups */}
           <div>
             <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">
               Featured Classifications
             </h3>
             <div className="space-y-2">
-              <div className="p-3 bg-gradient-card rounded-lg">
+              <button
+                onClick={() => {
+                  alert("Dinoflagellates - Novel Taxa Discovery:\n• Alexandrium minutum (toxic bloom species)\n• Karenia brevis (red tide organism)\n• Gymnodinium catenatum (chain-forming species)\n\nConfidence: 94.2% | Database: PR2 + AI clustering");
+                }}
+                className="w-full p-3 bg-gradient-card rounded-lg hover:shadow-md transition-shadow cursor-pointer"
+              >
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-sm font-medium text-foreground">Dinoflagellates</h4>
                   <Badge variant="secondary" className="text-xs">Novel Taxa</Badge>
                 </div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground text-left">
                   <em>Alexandrium minutum</em>, <em>Karenia brevis</em>, 
                   <em>Gymnodinium catenatum</em>
                 </p>
-              </div>
+              </button>
               
-              <div className="p-3 bg-gradient-card rounded-lg">
+              <button
+                onClick={() => {
+                  alert("Copepods - High Confidence Classifications:\n• Calanus finmarchicus (Arctic copepod)\n• Acartia tonsa (coastal planktonic)\n• Centropages typicus (marine calanoid)\n\nConfidence: 97.1% | Database: SILVA + NCBI");
+                }}
+                className="w-full p-3 bg-gradient-card rounded-lg hover:shadow-md transition-shadow cursor-pointer"
+              >
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-sm font-medium text-foreground">Copepods</h4>
                   <Badge variant="outline" className="text-xs">High Confidence</Badge>
                 </div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground text-left">
                   <em>Calanus finmarchicus</em>, <em>Acartia tonsa</em>, 
                   <em>Centropages typicus</em>
                 </p>
-              </div>
+              </button>
 
-              <div className="p-3 bg-gradient-card rounded-lg">
+              <button
+                onClick={() => {
+                  alert("Diatoms - Reference Database Match:\n• Thalassiosira pseudonana (model organism)\n• Chaetoceros socialis (chain-forming)\n• Skeletonema marinoi (bloom species)\n\nConfidence: 99.1% | Database: SILVA");
+                }}
+                className="w-full p-3 bg-gradient-card rounded-lg hover:shadow-md transition-shadow cursor-pointer"
+              >
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-sm font-medium text-foreground">Diatoms</h4>
                   <Badge variant="outline" className="text-xs">Reference DB</Badge>
                 </div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground text-left">
                   <em>Thalassiosira pseudonana</em>, <em>Chaetoceros socialis</em>, 
                   <em>Skeletonema marinoi</em>
                 </p>
-              </div>
+              </button>
             </div>
           </div>
 
@@ -189,11 +206,25 @@ export function AppSidebar() {
               Quick Actions
             </h3>
             <div className="space-y-2">
-              <Button variant="outline" size="sm" className="w-full justify-start">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="w-full justify-start"
+                onClick={() => {
+                  alert("Pipeline Settings:\n• Confidence threshold: 95%\n• Clustering algorithm: HDBSCAN\n• Database priority: SILVA > PR2 > NCBI\n• Novel taxa detection: Enabled");
+                }}
+              >
                 <Settings className="h-3 w-3 mr-2" />
                 Pipeline Settings
               </Button>
-              <Button variant="outline" size="sm" className="w-full justify-start">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="w-full justify-start"
+                onClick={() => {
+                  window.open("https://docs.lovable.dev", "_blank");
+                }}
+              >
                 <HelpCircle className="h-3 w-3 mr-2" />
                 Documentation
               </Button>

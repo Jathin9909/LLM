@@ -343,7 +343,7 @@ const Landing = () => {
       <footer className="bg-card border-t mt-16">
         <div className="container mx-auto px-6 py-8">
           <div className="text-center text-muted-foreground">
-            <p>&copy; 2024 OceanOMICS. Advancing marine biodiversity research through AI.</p>
+            <p>&copy; 2025 OceanOMICS. Advancing marine biodiversity research through AI.</p>
           </div>
         </div>
       </footer>
