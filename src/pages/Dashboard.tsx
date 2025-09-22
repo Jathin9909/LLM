@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PipelineWorkflow } from "@/components/PipelineWorkflow";
-import { BiodiversityCharts } from "@/components/BiodiversityCharts";
+import BiodiversityCharts from "@/components/BiodiversityCharts";
 import { NovelTaxaDiscovery } from "@/components/NovelTaxaDiscovery";
 import { QualityMetrics } from "@/components/QualityMetrics";
 import { SDGImpact } from "@/components/SDGImpact";

@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PipelineWorkflow } from "@/components/PipelineWorkflow";
-import { BiodiversityCharts } from "@/components/BiodiversityCharts";
+import BiodiversityCharts from "@/components/BiodiversityCharts";
 import { NovelTaxaDiscovery } from "@/components/NovelTaxaDiscovery";
 import { QualityMetrics } from "@/components/QualityMetrics";
 import { SDGImpact } from "@/components/SDGImpact";
@@ -321,11 +321,11 @@ const Analysis = () => {
               </TabsList>
 
               <TabsContent value="overview" className="space-y-4">
+                <BiodiversityCharts />
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  <BiodiversityCharts />
                   <NovelTaxaDiscovery />
+                  <SDGImpact />
                 </div>
-                <SDGImpact />
               </TabsContent>
 
               <TabsContent value="pipeline">

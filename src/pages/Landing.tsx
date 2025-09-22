@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dna, Upload, BarChart3, Download, ArrowRight, CheckCircle, Zap, Target, Microscope, Database, FileText, TrendingUp, Waves, Leaf } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { AppSidebar } from "@/components/AppSidebar";
+import BiodiversityCharts from "@/components/BiodiversityCharts";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -73,8 +74,8 @@ const Landing = () => {
   ];
 
   const stats = [
-    { label: "Species Classified", value: "5,356", icon: Database },
-    { label: "Novel Taxa Discovered", value: "127", icon: Zap },
+    { label: "Species Classified", value: "2,400", icon: Database },
+    { label: "Novel Taxa Discovered", value: "49", icon: Zap },
     { label: "Analysis Accuracy", value: "96.8%", icon: TrendingUp },
     { label: "Processing Speed", value: "< 2min", icon: BarChart3 }
   ];
@@ -127,14 +128,6 @@ const Landing = () => {
               <Upload className="h-5 w-5 mr-2" />
               Upload Your Data
               <ArrowRight className="h-5 w-5 ml-2" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={() => navigate('/demo')}
-              className="px-8"
-            >
-              View Demo Analysis
             </Button>
           </div>
         </div>
@@ -210,6 +203,9 @@ const Landing = () => {
             </Card>
           ))}
         </div>
+
+        {/* Biodiversity Charts Section */}
+        <BiodiversityCharts />
 
         {/* Taxonomy Classification Section */}
         <div className="space-y-8">

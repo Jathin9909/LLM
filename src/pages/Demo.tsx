@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SequenceViewer } from "@/components/SequenceViewer";
-import { BiodiversityCharts } from "@/components/BiodiversityCharts";
+import BiodiversityCharts from "@/components/BiodiversityCharts";
 import { NovelTaxaDiscovery } from "@/components/NovelTaxaDiscovery";
 import { QualityMetrics } from "@/components/QualityMetrics";
 import { SDGImpact } from "@/components/SDGImpact";
